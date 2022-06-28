@@ -1,6 +1,8 @@
-function addToList() {
-    let inputField = document.querySelector("#todo_text");
-    !inputField.value ? alert("Error!") : addNewListItem(inputField);
+function addToList(e) {
+    if(e.keyCode === 13){
+        let inputField = document.querySelector("#todo_text");
+        !inputField.value ? alert("Error!") : addNewListItem(inputField);
+    }
 }
 
 function addNewListItem(inputField) {
