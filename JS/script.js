@@ -6,9 +6,10 @@ function addToList(e) {
 }
 
 function addNewListItem(inputField) {
-    let todoList = document.querySelector("#todo_list");
+    let todoList = document.querySelector(".todo_list");
     let newListItemElement = document.createElement("li");
-    newListItemElement.innerText = inputField.value;
+    newListItemElement.innerHTML = `<input type="checkbox"/>
+    <label class="tick js-tick">${inputField.value}</label>`
     todoList.appendChild(newListItemElement);
     inputField.value = "";
 }
