@@ -5,3 +5,13 @@
 input[type=checkbox]:checked + label.tick{
     text-decoration: line-through;
     }
+
+.main {
+    text-align: center;
+    background-color: bisque;
+    padding: 5px 0px;
+}    
+
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+  }
