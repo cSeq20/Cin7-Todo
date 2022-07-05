@@ -14,6 +14,7 @@ function addNewListItem(inputField) {
     inputField.value = "";
 }
 
+
 // todo: add an id to the 'li' elements -- Chris
 // todo: add a key press to add an item instead of a button
 // todo: create a check box to cross out items on the list
