@@ -15,3 +15,11 @@
 input[type=checkbox]:checked + label.tick{
     text-decoration: line-through;
 }
+
+#notes-container {
+    display: none;
+}
+
+li:hover {
+    cursor: pointer;
+  }
