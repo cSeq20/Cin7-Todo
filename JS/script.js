@@ -3,12 +3,14 @@ class Todo {
         id,
         todoText,
         notes,
-        date
+        date,
+        check
     ) {
         this.id = id;
         this.todoText = todoText;
         this.notes = notes;
         this.date = date;
+        this.check = check;
     }
 }
 
@@ -17,7 +19,8 @@ let selectedTodoId;
 
 const listItemHTML = (todoItem) => {
     return `
-    <input class="todo-item" type="checkbox" id="${todoItem.id}" />
+    <input class="todo-item" type="checkbox" id="${todoItem.id}" ${todoItem.check && "checked"} 
+    onclick="updateItemCheckState(${todoItem.id})" />
     <label for="${todoItem.id}" class="tick" id="${todoItem.id}">
         ${todoItem.todoText}
     </label>
@@ -51,7 +54,8 @@ const addNewListItem = (inputText) => {
         id,
         inputText,
         "",
-        new Date()
+        new Date(),
+        false
     );
     
     todoItems.push(newTodo);
@@ -75,6 +79,10 @@ const addToList = (event) => {
         notesField.value = "";
     }
 };
+
+const updateItemCheckState = (id) => {
+    todoItems[id].check = !todoItems[id].check;
+}
 
 const deleteTodo = (event) => {
     let notesField = document.querySelector("#todo-note");
