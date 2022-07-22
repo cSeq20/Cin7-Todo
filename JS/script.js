@@ -19,8 +19,6 @@ let selectedTodoId;
 
 const listItemHTML = (todoItem) => {
     return `
-    <input class="todo-item" type="checkbox" id="${todoItem.id}" ${todoItem.check && "checked"} 
-    onclick="updateItemCheckState(${todoItem.id})" />
     <label for="${todoItem.id}" class="tick" id="${todoItem.id}">
         ${todoItem.todoText}
     </label>
@@ -29,6 +27,8 @@ const listItemHTML = (todoItem) => {
     </span>
     `;
 };
+//onclick="updateItemCheckState(${todoItem.id}
+
 
 const CreateListItemElement = (todoItem) => {
     let newListItemElement = document.createElement("li");
@@ -102,4 +102,15 @@ const selectItem = (elm) => {
     selectedTodoId = elm.getAttribute("id");
     let notesField = document.querySelector("#todo-note");
     notesField.value = todoItems[selectedTodoId].notes;
+    let test = document.querySelector(`.todo-item`);
+    test.style.backgroundColor = 'red';
 };
+
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+   ev.target.classList.toggle('checked');
+  }
+}, false);

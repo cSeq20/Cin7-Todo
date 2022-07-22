@@ -1,25 +1,89 @@
 #title-container {
     text-align:center;
     margin-top: 50px;
+    margin: auto;
 }
 
 #input-container {
-    text-align:center;
-    margin-top: 20px;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+#todo-text:focus {
+    border: hidden;
+    outline: none;
+    
 }
 
 #todo-list {
     list-style-type: none;
+    padding: 20px ;
+    font-size: 1.5em;
 }
 
-input[type=checkbox]:checked + label.tick{
-    text-decoration: line-through;
+#todo-text {
+    border-radius: 2em;
+    border : 1px hidden;
+    width:60%;
+    padding: 0.5em;
 }
 
 #notes-container {
     display: none;
+    z-index: 2;
 }
 
 li:hover {
     cursor: pointer;
+    background-color: #86A8E7;
   }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+     background-color: rgba(0,0,0,0);
+
+  }
+
+.background {
+    background-image: linear-gradient(to bottom,#3247C7, #006AE0, #0083E1, #0096CD,
+    #00A6AC, #00B389);
+    opacity: 0.4;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: -1;    
+}
+
+  #list-container, #notes-container {
+    margin: auto;
+    background-color: white;
+    width: 60%;
+    border-radius: 2em;
+    z-index: 2;
+  }
+
+
+  .container {
+    text-align: center;
+    margin: auto;
+    z-index: 1;
+  }
+
+  .todo-item {
+    padding: 5px;
+    text-align: left;
+    border : 1px rgb(53, 156, 197) solid;
+    border-radius: 0.5em;
+    margin-bottom: 5px;
+  }
+
+  .material-symbols-outlined {
+    float: right;
+    padding: 5px;
+
+  }
+
+
+
